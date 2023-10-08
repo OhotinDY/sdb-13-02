@@ -38,3 +38,21 @@ sudo ecryptfs-migrate-home -u cryptouser
 3. Зашифруйте созданный раздел с помощью LUKS.
 
 *В качестве ответа пришлите снимки экрана с поэтапным выполнением задания.*
+
+---
+
+Подготовка диска:
+
+```
+sudo apt install gparted
+```
+
+Установка LUKS и проверка установки:
+
+```
+sudo apt-get install cryptsetup
+cryptsetup --version
+```
+
+
+
