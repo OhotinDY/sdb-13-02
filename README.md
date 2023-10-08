@@ -54,5 +54,24 @@ sudo apt-get install cryptsetup
 cryptsetup --version
 ```
 
+Вывод информации о разделах:
+
+![cry](https://github.com/OhotinDY/sdb-13-02/blob/main/cry5.pmg)
+
+Шифрование созданного раздела с помощью LUKS:
+- Подготовка раздела:
+
+```
+sudo cryptsetup -y -v --type luks2 luksFormat /dev/sdb1
+```
+
+![cry](https://github.com/OhotinDY/sdb-13-02/blob/main/cry6.pmg)
+
+- Монтирование раздела:
+
+```
+sudo cryptsetup luksOpen /dev/sdb1 disk
+ ls /dev/mapper/disk
+```
 
 
