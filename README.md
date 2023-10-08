@@ -27,13 +27,9 @@ sudo ecryptfs-migrate-home -u cryptouser
 
 ![cry](https://github.com/OhotinDY/sdb-13-02/blob/main/cry3.pmg)
 
+Проверка домашнего каталога пользователя cryptouser с исходными и зашифрованными данными:
 
-
-
-
-
-
-
+![cry](https://github.com/OhotinDY/sdb-13-02/blob/main/cry4.pmg)
 
 ### Задание 2
 
