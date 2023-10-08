@@ -13,11 +13,11 @@
 
 Установка eCryptfs:
 
-![cry](https://github.com/OhotinDY/sdb-13-02/blob/main/cry1.pmg)
+![cry](https://github.com/OhotinDY/sdb-13-02/blob/main/cry1.png)
 
 Создание пользователя cryptouser:
 
-![cry](https://github.com/OhotinDY/sdb-13-02/blob/main/cry2.pmg)
+![cry](https://github.com/OhotinDY/sdb-13-02/blob/main/cry2.png)
 
 Шифрование домашнего каталога пользователя с помощью eCryptfs:
 
@@ -25,11 +25,11 @@
 sudo ecryptfs-migrate-home -u cryptouser
 ```
 
-![cry](https://github.com/OhotinDY/sdb-13-02/blob/main/cry3.pmg)
+![cry](https://github.com/OhotinDY/sdb-13-02/blob/main/cry3.png)
 
 Проверка домашнего каталога пользователя cryptouser с исходными и зашифрованными данными:
 
-![cry](https://github.com/OhotinDY/sdb-13-02/blob/main/cry4.pmg)
+![cry](https://github.com/OhotinDY/sdb-13-02/blob/main/cry4.png)
 
 ### Задание 2
 
@@ -56,7 +56,7 @@ cryptsetup --version
 
 Вывод информации о разделах:
 
-![cry](https://github.com/OhotinDY/sdb-13-02/blob/main/cry5.pmg)
+![cry](https://github.com/OhotinDY/sdb-13-02/blob/main/cry5.png)
 
 Шифрование созданного раздела с помощью LUKS:
 - Подготовка раздела:
@@ -65,7 +65,7 @@ cryptsetup --version
 sudo cryptsetup -y -v --type luks2 luksFormat /dev/sdb1
 ```
 
-![cry](https://github.com/OhotinDY/sdb-13-02/blob/main/cry6.pmg)
+![cry](https://github.com/OhotinDY/sdb-13-02/blob/main/cry6.png)
 
 - Монтирование раздела:
 
@@ -74,7 +74,7 @@ sudo cryptsetup luksOpen /dev/sdb1 disk
  ls /dev/mapper/disk
 ```
 
-![cry](https://github.com/OhotinDY/sdb-13-02/blob/main/cry7.pmg)
+![cry](https://github.com/OhotinDY/sdb-13-02/blob/main/cry7.png)
 
 - Форматирование раздела:
 
@@ -83,7 +83,7 @@ sudo dd if=/dev/zero of=/dev/mapper/disk
 sudo mkfs.ext4 /dev/mapper/disk
 ```
 
-![cry](https://github.com/OhotinDY/sdb-13-02/blob/main/cry8.pmg)
+![cry](https://github.com/OhotinDY/sdb-13-02/blob/main/cry8.png)
 
 - Монтирование «открытого» раздела:
 
@@ -92,7 +92,7 @@ mkdir .secret
 sudo mount /dev/mapper/disk .secret/
 ```
 
-![cry](https://github.com/OhotinDY/sdb-13-02/blob/main/cry9.pmg)
+![cry](https://github.com/OhotinDY/sdb-13-02/blob/main/cry9.png)
 
 - Завершение работы:
 
@@ -101,4 +101,4 @@ sudo umount .secret
 sudo cryptsetup luksClose disk
 ```
 
-![cry](https://github.com/OhotinDY/sdb-13-02/blob/main/cry10.pmg)
+![cry](https://github.com/OhotinDY/sdb-13-02/blob/main/cry10.png)
