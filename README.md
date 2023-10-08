@@ -11,6 +11,28 @@
 
 ---
 
+Установка eCryptfs:
+
+![cry](https://github.com/OhotinDY/sdb-13-02/blob/main/cry1.pmg)
+
+Создание пользователя cryptouser:
+
+![cry](https://github.com/OhotinDY/sdb-13-02/blob/main/cry2.pmg)
+
+Шифрование домашнего каталога пользователя с помощью eCryptfs:
+
+```
+sudo ecryptfs-migrate-home -u cryptouser
+```
+
+![cry](https://github.com/OhotinDY/sdb-13-02/blob/main/cry3.pmg)
+
+
+
+
+
+
+
 
 
 ### Задание 2
