@@ -74,4 +74,31 @@ sudo cryptsetup luksOpen /dev/sdb1 disk
  ls /dev/mapper/disk
 ```
 
+![cry](https://github.com/OhotinDY/sdb-13-02/blob/main/cry7.pmg)
 
+- Форматирование раздела:
+
+```
+sudo dd if=/dev/zero of=/dev/mapper/disk
+sudo mkfs.ext4 /dev/mapper/disk
+```
+
+![cry](https://github.com/OhotinDY/sdb-13-02/blob/main/cry8.pmg)
+
+- Монтирование «открытого» раздела:
+
+```
+mkdir .secret
+sudo mount /dev/mapper/disk .secret/
+```
+
+![cry](https://github.com/OhotinDY/sdb-13-02/blob/main/cry9.pmg)
+
+- Завершение работы:
+
+```
+sudo umount .secret
+sudo cryptsetup luksClose disk
+```
+
+![cry](https://github.com/OhotinDY/sdb-13-02/blob/main/cry10.pmg)
